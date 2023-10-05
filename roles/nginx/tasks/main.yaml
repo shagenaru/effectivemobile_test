@@ -1,0 +1,14 @@
+---
+
+  - name: create nginx directory
+    file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - /home/student/test_lab
+      - /home/student/test_lab/nginx
+      - /home/student/test_lab/nginx/config
+  - name: send nginx config
+    template:
+      src: default.j2
+      dest: /home/student/test_lab/nginx/config/default.conf

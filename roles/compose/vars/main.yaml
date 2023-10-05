@@ -1,0 +1,4 @@
+root_pass: test
+user: test
+user_pass: test
+database_name: docker_app

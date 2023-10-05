@@ -1,0 +1,13 @@
+---
+
+  - name: send dcoker-compose file
+    template:
+      src: docker-compose.j2
+      dest: /home/student/test_lab/docker-compose.yaml
+  - name: run docker-compose
+    community.docker.docker_compose:
+      project_src: /home/student/test_lab
+    register: output
+  - name: print result
+    debug:
+      var: output

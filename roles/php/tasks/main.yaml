@@ -1,0 +1,20 @@
+---
+
+  - name: create php directory
+    file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - /home/student/test_lab/php
+      - /home/student/test_lab/php/www
+      - /home/student/test_lab/php/www/html
+
+  - name: copy Dockerfile
+    copy:
+      src: Dockerfile
+      dest: /home/student/test_lab/php/Dockerfile
+
+  - name: copy index.php
+    copy:
+      src: www/html/index.php
+      dest: /home/student/test_lab/php/www/html/index.php 
